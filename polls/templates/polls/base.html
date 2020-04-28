@@ -1,0 +1,14 @@
+<p>
+    Hello, {{ request.user.username }}!
+</p>
+<p align="right">
+    <a href="/accounts/login">Login</a>
+    <a href="/accounts/logout">Logout</a>
+  </p>
+  
+  {% block content %}
+  <p>
+      This is a placeholder block.
+  </p>
+  {% endblock %}
+  
