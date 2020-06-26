@@ -25,7 +25,7 @@ SECRET_KEY = '6$@tg9rda^jmbb&y&&(@k3bd3t!e#1^nig4sys!mt2+5_jwj5q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 LOGIN_REDIRECT_URL = '/polls/'
 LOGOUT_REDIRECT_URL = '/polls/'
@@ -34,6 +34,8 @@ LOGOUT_REDIRECT_URL = '/polls/'
 # Application definition
 
 INSTALLED_APPS = [
+    'compressor',
+    ''
     'registration',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -78,12 +80,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# settings.py
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
+
 
 
 # Password validation
